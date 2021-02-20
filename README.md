@@ -2,6 +2,8 @@
 
 Easily update your Fontello config with this nodejs package.
 
+**Note: this lib is based on [reimund/fontello-update](https://github.com/reimund/fontello-update)**
+
 ## Workflow
 
 1. Run fontello-update with an initial fontello config.
@@ -13,59 +15,57 @@ Use together with [grunt-fontello-update](https://www.npmjs.org/package/grunt-fo
 
 ## Example
 
- ```javascript
-
-var fontelloUpdate = require('fontello-update');
+```javascript
+var fontelloUpdate = require("fontello-update");
 
 fontelloUpdate({
-	config: 'fontello.json',
-	fonts: 'public/font',
-	css: 'public/css'
+  config: "fontello.json",
+  fonts: "public/font",
+  css: "public/css",
 });
-
 ```
 
 ## Options
-* **config** - The config file to use. Default: 'config.json'.
-* **overwrite** - Overwrite existing config file. Default: true.
-* **fonts** - Font files' destination: Default: 'fonts'.
-* **css** - Stylesheets' destination: Default: 'css'.
-* **open** - Open the package on the fontello website and don't update the fonts at all. Default: false.
-* **updateConfigOnly** - Only update the config file (ie don't extract font and css files). Default: false.
-* **session** - The session to use. Default: null.
+
+- **config** - The config file to use. Default: 'config.json'.
+- **overwrite** - Overwrite existing config file. Default: true.
+- **fonts** - Font files' destination: Default: 'fonts'.
+- **css** - Stylesheets' destination: Default: 'css'.
+- **open** - Open the package on the fontello website and don't update the fonts at all. Default: false.
+- **updateConfigOnly** - Only update the config file (ie don't extract font and css files). Default: false.
+- **session** - The session to use. Default: null.
 
 ## Return value
+
 The fontello update function returns a promise. For example, to use it in an
 asynchronous Grunt task, you would do something like:
 
 ```javascript
+function fontelloUpdate() {
+  var done = this.async();
+  var fontelloUpdate = require("fontello-update");
 
-function fontelloUpdate()
-{
-	var done = this.async();
-	var fontelloUpdate = require('fontello-update');
-
-	fontelloUpdate({
-			config: 'fontello.json',
-			dest: 'fontello.json'
-		})
-		.then(done)
-		.catch(done)
-	;
+  fontelloUpdate({
+    config: "fontello.json",
+    dest: "fontello.json",
+  })
+    .then(done)
+    .catch(done);
 }
 ```
 
 ## Gulp
+
 Basically Fulfill task relying on promises.
 
 ```javascript
-var fontelloUpdate = require('fontello-update');
+var fontelloUpdate = require("fontello-update");
 
-gulp.task('fontello', function() {
+gulp.task("fontello", function () {
   return fontelloUpdate({
-    config: 'fontello.json',
-    fonts: 'public/font',
-    css: 'public/css'
+    config: "fontello.json",
+    fonts: "public/font",
+    css: "public/css",
   });
 });
 ```

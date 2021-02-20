@@ -1,6 +1,6 @@
 {
-  "name": "fontello-update",
-  "version": "0.6.5",
+  "name": "fontello-update-active",
+  "version": "0.0.1",
   "description": "Updates your Fontello files from your current Fontello session or config.",
   "main": "index.js",
   "scripts": {
@@ -12,13 +12,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:reimund/fontello-update.git"
+    "url": "git@github.com:Somnus007/fontello-update.git"
   },
-  "author": "Reimund Trost",
+  "author": "Allen Song",
   "license": "MIT",
   "dependencies": {
     "adm-zip": "^0.4.7",
-    "form-data": "^1.0.0-rc3",
+    "form-data": "^4.0.0",
     "open": ">=6.0.0",
     "q": "^1.1.2",
     "request": "^2.60.0",
